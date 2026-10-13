@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software & Hardware Club, CSE-UAP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Dynamic Particle Canvas -->
+  <canvas id="bg"></canvas>
+
+  <!-- Intro Stage Section -->
+  <div class="stage" id="intro-stage">
+    <div class="logos" id="logos">
+      <div class="logo-wrapper l">
+        <img src="UAP Logo.png" alt="UAP Logo" class="logo-img" onerror="this.style.display='none'">
+      </div>
+      <div class="divider"></div>
+      <div class="logo-wrapper r">
+        <img src="snh_logo.png" alt="SnH Logo" class="logo-img" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <div class="welcome" id="welcome">
+      <div class="small">Welcome To</div>
+      <h1 id="title"></h1>
+      <div class="sub">CSE-UAP</div>
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Auto Slideshow Section -->
+  <div class="team-slider" id="team-slider">
+    <div class="slides-container" id="slides-container">
+      
+      <!-- Member 1 -->
+      <div class="member-slide current">
+        <img src="members/Baivab Das.jpg" alt="Baivab Das" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Baivab Das</h1>
+          <p class="member-role">Assistant Professor & Convener</p>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="member-slide">
+        <img src="members/Dr. Md. Shafiqul Islam.jpeg" alt="Dr. Md. Shafiqul Islam" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Dr. Md. Shafiqul Islam</h1>
+          <p class="member-role">Assistant Professor & Co-Convener</p>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="member-slide">
+        <img src="members/nazmul vaia.jpg" alt="Nazmul Mridha" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Nazmul Mridha</h1>
+          <p class="member-role">President</p>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="member-slide">
+        <img src="members/mahima apu.jpg" alt="Sanjida Siddiqa Mahima" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Sanjida Siddiqa Mahima</h1>
+          <p class="member-role">Vice President</p>
+        </div>
+      </div>
+
+      <!-- Member 5 -->
+      <div class="member-slide">
+        <img src="members/arefin bhai.jpg" alt="Md. Samimul Arefin" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Md. Samimul Arefin</h1>
+          <p class="member-role">Secretary</p>
+        </div>
+      </div>
+
+      <!-- Member 6 -->
+      <div class="member-slide">
+        <img src="members/fahim vai.jpg" alt="Md. Fahim Azad" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Md. Fahim Azad</h1>
+          <p class="member-role">General Secretary</p>
+        </div>
+      </div>
+
+      <!-- Member 7 -->
+      <div class="member-slide">
+        <img src="members/samin vai.jpg" alt="Samin Rashid" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Samin Rashid</h1>
+          <p class="member-role">Treasurer</p>
+        </div>
+      </div>
+
+      <!-- Member 8 -->
+      <div class="member-slide">
+        <img src="members/Adnan Vai.png" alt="Md Adnan Dewan" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Md Adnan Dewan</h1>
+          <p class="member-role">Senior Graphics Executive</p>
+        </div>
+      </div>
+
+      <!-- Member 9 -->
+      <div class="member-slide">
+        <img src="members/sohan vai.jpg" alt="Sohanur Rahman" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Sohanur Rahman</h1>
+          <p class="member-role">Event Coordinator</p>
+        </div>
+      </div>
+
+      <!-- Member 10 -->
+      <div class="member-slide">
+        <img src="members/Fayejul.jpg" alt="Fayejul Kabir" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Fayejul Kabir</h1>
+          <p class="member-role">Media & Publications</p>
+        </div>
+      </div>
+
+      <!-- Member 11 -->
+      <div class="member-slide">
+        <img src="members/Lameya.jpg" alt="Lameya Hassan Aysha" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Lameya Hassan Aysha</h1>
+          <p class="member-role">Media & Publications</p>
+        </div>
+      </div>
+
+      <!-- Member 12 -->
+      <div class="member-slide">
+        <img src="members/taspia.jpg" alt="Israt Anjum Taspia" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Israt Anjum Taspia</h1>
+          <p class="member-role">Seeker</p>
+        </div>
+      </div>
+
+      <!-- Member 13 -->
+      <div class="member-slide">
+        <img src="members/mahmud.jpg" alt="Mahmud Alam Pathan" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Mahmud Alam Pathan</h1>
+          <p class="member-role">Seeker</p>
+        </div>
+      </div>
+
+      <!-- Member 14 -->
+      <div class="member-slide">
+        <img src="members/riana.jpg" alt="Riana Iftekhar" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Riana Iftekhar</h1>
+          <p class="member-role">Junior Graphics Executive</p>
+        </div>
+      </div>
+
+      <!-- Member 15 -->
+      <div class="member-slide">
+        <img src="members/nusrat.jpg" alt="Nusrat Jahan" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Nusrat Jahan</h1>
+          <p class="member-role">Junior Executive</p>
+        </div>
+      </div>
+
+      <!-- Member 16 -->
+      <div class="member-slide">
+        <img src="members/jurain.jpg" alt="Jurain Hossain Dihan" class="full-member-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=80'">
+        <div class="slide-overlay"></div>
+        <div class="member-info-floating">
+          <h1 class="member-name">Jurain Hossain Dihan</h1>
+          <p class="member-role">Junior Executive</p>
+        </div>
+      </div>
+
+      <!-- ================= HACKAPEX 2026 EVENT ================= -->
+      <div class="member-slide">
+        <div class="slide-overlay"></div>
+        <div class="event-showcase-container">
+          <span class="event-badge">Previous Event</span>
+          <h1 class="event-main-title">HACKAPEX 2026</h1>
+          <p class="event-subtitle">Intra University Hackathon</p>
+          
+          <div class="event-photo-grid">
+            <div class="event-thumb">
+              <img src="HACKAPEX 2026/1.jpeg" alt="Hackapex 1" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="HACKAPEX 2026/2.jpeg" alt="Hackapex 2" onerror="this.src='https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="HACKAPEX 2026/3.jpg.jpg" alt="Hackapex 3" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="HACKAPEX 2026/4.jpg" alt="Hackapex 4" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80'">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= DEVFUSION ================= -->
+      <div class="member-slide">
+        <div class="slide-overlay"></div>
+        <div class="event-showcase-container">
+          <span class="event-badge">Previous Event</span>
+          <h1 class="event-main-title">DEVFUSION</h1>
+          <p class="event-subtitle">Intra University Mini Hackathon</p>
+          
+          <div class="event-photo-grid">
+            <div class="event-thumb">
+              <img src="DEVFUSION/1.jpeg" alt="Devfusion 1" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="DEVFUSION/2.jpeg" alt="Devfusion 2" onerror="this.src='https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="DEVFUSION/3.jpeg" alt="Devfusion 3" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="DEVFUSION/4.jpg" alt="Devfusion 4" onerror="this.src='https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=600&q=80'">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= DEVFRONT ================= -->
+      <div class="member-slide">
+        <div class="slide-overlay"></div>
+        <div class="event-showcase-container">
+          <span class="event-badge">Previous Event</span>
+          <h1 class="event-main-title">Devfront</h1>
+          <p class="event-subtitle">Intra University Mini Hackathon</p>
+          
+          <div class="event-photo-grid">
+            <div class="event-thumb">
+              <img src="Devfront/1.jpeg" alt="Devfront 1" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="Devfront/2.jpeg" alt="Devfront 2" onerror="this.src='https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="Devfront/3.jpg" alt="Devfront 3" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="Devfront/4.jpg" alt="Devfront 4" onerror="this.src='https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=600&q=80'">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= INNOVATEX 2025 ================= -->
+      <div class="member-slide">
+        <div class="slide-overlay"></div>
+        <div class="event-showcase-container">
+          <span class="event-badge">Previous Event</span>
+          <h1 class="event-main-title">InnovateX 2025</h1>
+          <p class="event-subtitle">Inter‑University Hackathon</p>
+          
+          <div class="event-photo-grid">
+            <div class="event-thumb">
+              <img src="InnovateX/1.jpg" alt="InnovateX 1" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="InnovateX/2.jpg" alt="InnovateX 2" onerror="this.src='https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="InnovateX/3.jpg" alt="InnovateX 3" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="event-thumb">
+              <img src="InnovateX/4.jpg" alt="InnovateX 4" onerror="this.src='https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=600&q=80'">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= THANK YOU & DEVELOPER CREDIT SLIDE ================= -->
+      <div class="member-slide final-outro-slide">
+        <div class="slide-overlay final-overlay"></div>
+        <div class="event-showcase-container">
+          <h1 class="event-main-title" style="font-size: clamp(36px, 5vw, 64px); color: #ffffff; text-shadow: 0 0 30px rgba(0,242,254,0.6); margin-bottom: 15px;">Thank You</h1>
+          <span class="event-badge" style="margin-top: 10px;">Designed & Developed By</span>
+          <h2 class="event-main-title" style="font-size: clamp(24px, 3.5vw, 42px); margin-top: 5px;">Md Adnan Dewan</h2>
+          <p class="event-subtitle">Senior Graphics Executive</p>
+        </div>
+      </div>
+
+      <!-- ================= 21 NUMBER LOGO OUTRO SLIDE ================= -->
+      <div class="member-slide final-outro-slide">
+        <div class="slide-overlay final-overlay"></div>
+        <div class="event-showcase-container" style="padding: 0;">
+          <div class="logos" style="opacity: 1; transform: none; display: flex; align-items: center; justify-content: center; gap: clamp(24px, 6vw, 80px);">
+            <div class="logo-wrapper l" style="opacity: 1; transform: none;">
+              <img src="UAP Logo.png" alt="UAP Logo" class="logo-img" onerror="this.style.display='none'">
+            </div>
+            <div class="divider" style="height: clamp(140px, 26vw, 280px);"></div>
+            <div class="logo-wrapper r" style="opacity: 1; transform: none;">
+              <img src="snh_logo.png" alt="SnH Logo" class="logo-img" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Slide Indicator Box -->
+    <div class="slider-indicator-box">
+      <div class="slide-indicator" id="slide-indicator">1 / 21</div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Replay Button -->
+  <button id="replay">
+    <span class="icon">↻</span>
+    <span>Replay Intro</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
