@@ -16,8 +16,50 @@ document.addEventListener('DOMContentLoaded', () => {
   const titleElement = document.getElementById('title');
   const teamSlider = document.getElementById('team-slider');
   const replayBtn = document.getElementById('replay');
+  const bgAudio = document.getElementById('bg-audio');
+  const musicToggle = document.getElementById('music-toggle');
+  const musicText = document.getElementById('music-text');
 
   let particles = [];
+  let isMusicPlaying = false;
+
+  // Function to toggle music
+  function toggleMusic() {
+    if (isMusicPlaying) {
+      bgAudio.pause();
+      isMusicPlaying = false;
+      musicText.textContent = "Music Off";
+      musicToggle.style.borderColor = "rgba(0, 242, 254, 0.4)";
+    } else {
+      bgAudio.play().then(() => {
+        isMusicPlaying = true;
+        musicText.textContent = "Music On";
+        musicToggle.style.borderColor = "var(--teal-accent)";
+      }).catch(e => {
+        console.log("Audio playback error:", e);
+      });
+    }
+  }
+
+  musicToggle.addEventListener('click', toggleMusic);
+
+  // Auto-play music on first user interaction (click anywhere on page)
+  function handleFirstInteraction() {
+    if (!isMusicPlaying) {
+      bgAudio.play().then(() => {
+        isMusicPlaying = true;
+        musicText.textContent = "Music On";
+        musicToggle.style.borderColor = "var(--teal-accent)";
+      }).catch(e => {
+        console.log("Autoplay blocked:", e);
+      });
+    }
+    window.removeEventListener('click', handleFirstInteraction);
+    window.removeEventListener('keydown', handleFirstInteraction);
+  }
+
+  window.addEventListener('click', handleFirstInteraction);
+  window.addEventListener('keydown', handleFirstInteraction);
 
   function getSlides() {
     return document.querySelectorAll('.member-slide');
@@ -189,6 +231,12 @@ document.addEventListener('DOMContentLoaded', () => {
   animateCanvas();
   playSequence();
 
-  replayBtn.addEventListener('click', playSequence);
+  replayBtn.addEventListener('click', () => {
+    playSequence();
+    if (!isMusicPlaying) {
+      toggleMusic();
+    }
+  });
+
   window.addEventListener('resize', setupCanvas);
 });

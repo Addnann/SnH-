@@ -285,6 +285,17 @@ canvas {
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 242, 254, 0.4);
 }
 
+/* Giant Thank You Title Styling */
+.giant-thank-you {
+  font-size: clamp(50px, 8vw, 96px) !important;
+  background: linear-gradient(135deg, #ffffff 30%, var(--teal-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(0, 242, 254, 0.6);
+  margin-bottom: 10px !important;
+  letter-spacing: 0.02em;
+}
+
 .event-subtitle {
   font-size: clamp(14px, 1.8vw, 20px);
   font-weight: 600;
@@ -346,7 +357,7 @@ canvas {
 }
 
 .slide-indicator {
-  font-size: 15px;
+  font-size: 10px;
   font-weight: 800;
   color: var(--teal-accent);
   letter-spacing: 0.1em;
@@ -372,11 +383,10 @@ canvas {
   box-shadow: 0 0 10px var(--teal-accent);
 }
 
-/* Replay Button */
-button#replay {
+/* Replay Button & Music Toggle Button */
+button#replay, button#music-toggle {
   position: fixed;
   top: 28px;
-  right: 28px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   color: #fff;
@@ -387,9 +397,15 @@ button#replay {
   font-weight: 600;
   z-index: 10;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-button#replay:hover {
+button#replay { right: 28px; }
+button#music-toggle { right: 170px; }
+
+button#replay:hover, button#music-toggle:hover {
   background: rgba(0, 242, 254, 0.25);
   border-color: var(--teal-accent);
   box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
@@ -402,4 +418,6 @@ button#replay:hover {
     transform: translateX(50%);
     align-items: center;
   }
+  button#music-toggle { right: 150px; padding: 8px 14px; font-size: 13px; }
+  button#replay { right: 15px; padding: 8px 14px; font-size: 13px; }
 }

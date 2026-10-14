@@ -10,6 +10,18 @@
   <!-- Dynamic Particle Canvas -->
   <canvas id="bg"></canvas>
 
+  <!-- Background Audio -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="bg-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Music Control Button -->
+  <button id="music-toggle" title="Play/Pause Music">
+    <span class="icon">🎵</span>
+    <span id="music-text">Music Off</span>
+  </button>
+
   <!-- Intro Stage Section -->
   <div class="stage" id="intro-stage">
     <div class="logos" id="logos">
@@ -298,9 +310,9 @@
       <div class="member-slide final-outro-slide">
         <div class="slide-overlay final-overlay"></div>
         <div class="event-showcase-container">
-          <h1 class="event-main-title" style="font-size: clamp(36px, 5vw, 64px); color: #ffffff; text-shadow: 0 0 30px rgba(0,242,254,0.6); margin-bottom: 15px;">Thank You</h1>
-          <span class="event-badge" style="margin-top: 10px;">Designed & Developed By</span>
-          <h2 class="event-main-title" style="font-size: clamp(24px, 3.5vw, 42px); margin-top: 5px;">Md Adnan Dewan</h2>
+          <h1 class="event-main-title giant-thank-you">Thank You</h1>
+          <span class="event-badge" style="margin-top: 15px;">Designed & Developed By</span>
+          <h2 class="event-main-title" style="font-size: clamp(26px, 4vw, 46px); margin-top: 8px;">Md Adnan Dewan</h2>
           <p class="event-subtitle">Senior Graphics Executive</p>
         </div>
       </div>
