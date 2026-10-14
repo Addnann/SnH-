@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const TITLE_TEXT = "Software & Hardware Club";
   const LOGO_DISPLAY_TIME = 2600;
-  const SLIDE_DURATION = 2000; // 2 Seconds per slide
+  
+  const NORMAL_DURATION = 2000; // 2 seconds for member slides
+  const EVENT_DURATION = 6500;  // Increased to 6.5 seconds for previous event slides
+  
   const PARTICLE_COUNT = Math.min(Math.floor(window.innerWidth / 12), 100);
 
   let currentSlideIndex = 0;
@@ -43,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   musicToggle.addEventListener('click', toggleMusic);
 
-  // Auto-play music on first user interaction (click anywhere on page)
+  // Auto-play music on first user interaction
   function handleFirstInteraction() {
     if (!isMusicPlaying) {
       bgAudio.play().then(() => {
@@ -65,6 +68,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return document.querySelectorAll('.member-slide');
   }
 
+  function getCurrentSlideDuration() {
+    const slides = getSlides();
+    if (!slides[currentSlideIndex]) return NORMAL_DURATION;
+    // Check if current slide is an event slide
+    if (slides[currentSlideIndex].classList.contains('event-slide')) {
+      return EVENT_DURATION;
+    }
+    return NORMAL_DURATION;
+  }
+
   function updateIndicator() {
     const slides = getSlides();
     const slideIndicator = document.getElementById('slide-indicator');
@@ -80,13 +93,15 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(progressInterval);
     progressBarFill.style.width = '0%';
 
+    let currentDuration = getCurrentSlideDuration();
     let startTime = Date.now();
+    
     progressInterval = setInterval(() => {
       let elapsedTime = Date.now() - startTime;
-      let progressPercent = Math.min((elapsedTime / SLIDE_DURATION) * 100, 100);
+      let progressPercent = Math.min((elapsedTime / currentDuration) * 100, 100);
       progressBarFill.style.width = `${progressPercent}%`;
 
-      if (elapsedTime >= SLIDE_DURATION) {
+      if (elapsedTime >= currentDuration) {
         clearInterval(progressInterval);
       }
     }, 30);
@@ -114,24 +129,30 @@ document.addEventListener('DOMContentLoaded', () => {
     slides[currentSlideIndex].classList.add('current');
 
     updateIndicator();
-    resetProgressBar();
+    scheduleNextSlide();
   }
 
-  function startAutoPlay() {
+  function scheduleNextSlide() {
     stopAutoPlay();
     resetProgressBar();
-    autoPlayTimer = setInterval(() => {
+    let currentDuration = getCurrentSlideDuration();
+
+    autoPlayTimer = setTimeout(() => {
       const slides = getSlides();
       if (currentSlideIndex >= slides.length - 1) {
         stopAutoPlay();
       } else {
         goToSlide(currentSlideIndex + 1);
       }
-    }, SLIDE_DURATION);
+    }, currentDuration);
+  }
+
+  function startAutoPlay() {
+    goToSlide(currentSlideIndex);
   }
 
   function stopAutoPlay() {
-    if (autoPlayTimer) clearInterval(autoPlayTimer);
+    if (autoPlayTimer) clearTimeout(autoPlayTimer);
     if (progressInterval) clearInterval(progressInterval);
   }
 
